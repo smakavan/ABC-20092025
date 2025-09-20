@@ -1,0 +1,21 @@
+trigger: none
+
+pool:
+  name: "Local-Linux"
+
+stages:
+  steps:
+  - checkout: self
+    fetchDepth: 1
+  - task: TerraformTask@5
+    displayName: 'Terraform : init'
+  - task: TerraformTask@5
+    displayName: 'Terraform : plan'
+    inputs:
+      command: plan
+      environmentServiceNameAzureRM: 2037d4e0-22e8-4b5c-85ae-2e6f1f795ecd
+  - task: TerraformTask@5
+    displayName: 'Terraform : apply'
+    inputs:
+      command: apply
+      environmentServiceNameAzureRM: 2037d4e0-22e8-4b5c-85ae-2e6f1f795ecd
