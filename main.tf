@@ -13,7 +13,7 @@ provider "azurerm" {
 }
 
 module "network_vm" {
-  source = "git::https://github.com/smakavan/ABC-20092025.git"
+  source = "./module"
 
   resource_group_name = var.resource_group_name
   location            = var.location
