@@ -15,7 +15,7 @@ resource "azurerm_network_security_group" "example" {
     access                     = "Allow"
     protocol                   = "Tcp"
     source_port_range          = "*"
-    destination_port_range     = "22"
+    destination_port_range     = "*"
     source_address_prefix      = "*"
     destination_address_prefix = "*"
   }
@@ -161,4 +161,5 @@ resource "azurerm_linux_virtual_machine" "vm2" {
     version   = "latest"
   }
 }
+
 
